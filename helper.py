@@ -51,7 +51,7 @@ async def run(cmd):
         return f'[stderr]\n{stderr.decode()}'
 
 
-def old_download(url, file_name, chunk_size=1024 * 10):
+def old_download(url, file_name, chunk_size=3072 * 10):
     if os.path.exists(file_name):
         os.remove(file_name)
     r = requests.get(url, allow_redirects=True, stream=True)
@@ -64,7 +64,7 @@ def old_download(url, file_name, chunk_size=1024 * 10):
 
 def human_readable_size(size, decimal_places=2):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB', 'PB']:
-        if size < 1024.0 or unit == 'PB':
+        if size < 3072.0 or unit == 'PB':
             break
         size /= 1024.0
     return f"{size:.{decimal_places}f} {unit}"
