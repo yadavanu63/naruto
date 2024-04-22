@@ -30,7 +30,7 @@ bot = Client("bot",
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hi 👋 Sir ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** 『 𝗛𝗘𝗠𝗨 』\n")
+    editable = await m.reply_text(f"Hi 👋 Sir ! How are You Sir 🤓❤️?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** 𝗛𝗘𝗠𝗨")
   
 
 @bot.on_message(filters.command("stop"))
@@ -62,7 +62,7 @@ async def account_login(bot: Client, m: Message):
             os.remove(x)
             # print(len(links)
         except:
-            await m.reply_text("Invalid file input.🥲")
+            await m.reply_text("Invalid file input.🥲Lol")
             os.remove(x)
             return
     else:
@@ -108,7 +108,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name**\n**Ex : ** 『 𝗛𝗘𝗠𝗨 』")
+    await editable.edit("**Enter Your Name**\n**Ex : ** 𝗛𝗘𝗠𝗨")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -117,7 +117,7 @@ async def account_login(bot: Client, m: Message):
     else:
         CR = raw_text3
 
-    await editable.edit("Now Send Your **Thumb url**\nEg : `https://telegra.ph/file/7b060bedc493fa9be744f.jpg`\n\nOr Send **no**")
+    await editable.edit("Now Send Your **Thumb url**\n\nOr Send **no**")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -154,7 +154,7 @@ async def account_login(bot: Client, m: Message):
             elif 'classplusapp' in url:
                   headers = {
                       'Host': 'api.classplusapp.com',
-                      'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA5MTAzNjYsIm9yZ0lkIjo0MDU0NzMsInR5cGUiOjEsIm1vYmlsZSI6IjkxOTUyMDAzNjgzNCIsIm5hbWUiOiJSYW1wYWwiLCJlbWFpbCI6InNoYWxpbmlzaGFybWExNTA2OEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiI5MWU0MTYyODMxNjQxZGFjMTAzYWMyNGMzYjQxNTg4YyIsImlhdCI6MTY4MDI5NTY4MSwiZXhwIjoxNjgwOTAwNDgxfQ.q_iVpHJ1jgpHvb_v3b35AiyjrnW34PuWs00T5tWdyJn9Cm5tzI3ndKhY8I_sPmyn',
+                      'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzg3Mjg5NzYsIm9yZ0lkIjo4NTQ4LCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTg3MDgzODc2NDgiLCJuYW1lIjoiTXVzdHVmYSIsImVtYWlsIjpudWxsLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiJiNjVkY2NkZjg2NGE0MGUyZjQyZjQ4YTg2OWYzYzU3MSIsImlhdCI6MTY3MzU3NTkwOSwiZXhwIjoxNjc0MTgwNzA5fQ.c1ZM9_Kzrb4Bmou0c7HNzscPWtBwikdZUCNmv8K0OCo08ySZoktpbhUA9z4DHqRj',
                       'user-agent': 'Mobile-Android',
                       'app-version': '1.4.37.1',
                       'api-version': '18',
@@ -167,7 +167,7 @@ async def account_login(bot: Client, m: Message):
                   url = response.json()['url']
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{str(count).zfill(3)}) {name1[:60]}'
+            name = f'{str(count).zfill(3)}) {CR} {name1[:60]}'
 
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
@@ -175,9 +175,9 @@ async def account_login(bot: Client, m: Message):
                 ytf = f"b[height<={raw_text2}]/bv[height<={raw_text2}]+ba/b/bv+ba"
 
             if "jw-prod" in url:
-                cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
+                cmd = f'yt-dlp -o "{name}" "{url}"'
             else:
-                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
+                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}"'
 
             try:
                 cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}**{CR}**.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
