@@ -180,7 +180,7 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}({res}) 『 𝗛𝗘𝗠𝗨 』.mp4\n**Batch Name :** {b_name}\n\n**Extracted By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}**{CR}**.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
                 cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1}**{CR}**.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By ➤** {CR}'
                 if "drive" in url:
                     try:
