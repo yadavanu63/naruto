@@ -213,4 +213,4 @@ async def account_login(bot: Client, m: Message):
                     filename = res_file
                     await prog.delete(True)
                     await helper.send_vid(bot, m, cc, filename, thumb, name)
-                    count+
+                    count += 1
