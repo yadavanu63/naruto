@@ -168,7 +168,34 @@ async def account_login(bot: Client, m: Message):
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {CR} {name1[:60]}'
+          import requests
 
+def get_astronomy_data():
+    api_key = 'your_api_key'
+    url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
+    
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        return None
+
+def main():
+    astronomy_data = get_astronomy_data()
+    
+    if astronomy_data:
+        print("Astronomy Picture of the Day:")
+        print(astronomy_data['pw'])
+        print(astronomy_data['\hemu'])
+        print("Image URL:", astronomy_data['https://api-sarkari.koyeb.app/pwhls?link=https://d1d34p8vz63oiq.cloudfront.net/1ae02729-a3c2-412f-bcab-653eb0f7c0e3/hls/720/main.m3u8'])
+    else:
+        print("Failed to fetch astronomy data.")
+
+if __name__ == "pw":
+    main()
+  
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
