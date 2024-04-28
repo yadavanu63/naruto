@@ -166,21 +166,6 @@ async def account_login(bot: Client, m: Message):
                   response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)                
                   url = response.json()['url']
 
-                  elif 'physics wala' in url:
-                  headers = {
-                      'Host': 'api.physics wala.com',
-                      'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA5MTAzNjYsIm9yZ0lkIjo0MDU0NzMsInR5cGUiOjEsIm1vYmlsZSI6IjkxOTUyMDAzNjgzNCIsIm5hbWUiOiJSYW1wYWwiLCJlbWFpbCI6InNoYWxpbmlzaGFybWExNTA2OEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiI5MWU0MTYyODMxNjQxZGFjMTAzYWMyNGMzYjQxNTg4YyIsImlhdCI6MTY4MDI5NTY4MSwiZXhwIjoxNjgwOTAwNDgxfQ.q_iVpHJ1jgpHvb_v3b35AiyjrnW34PuWs00T5tWdyJn9Cm5tzI3ndKhY8I_sPmyn',
-                      'user-agent': 'Mobile-Android',
-                      'app-version': '1.4.37.1',
-                      'api-version': '18',
-                      'device-id': '5d0d17ac8b3c9f51',
-                      'device-details':'2848b866799971ca_2848b8667a33216c_SDK-30',
-                      'accept-encoding': 'gzip, deflate' }
-                
-                  params = (('url', f'{url}'), )
-                  response = requests.get('https://api-sarkari.koyeb.app/pwhls?link=https://d1d34p8vz63oiq.cloudfront.net/1ae02729-a3c2-412f-bcab-653eb0f7c0e3/hls/720/main.m3u8', headers=headers, params=params)                
-                  url = response.json()['url']
-          
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {CR} {name1[:60]}'
 
