@@ -165,37 +165,39 @@ async def account_login(bot: Client, m: Message):
                   params = (('url', f'{url}'), )
                   response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)                
                   url = response.json()['url']
+           import requests
 
-            name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{str(count).zfill(3)}) {CR} {name1[:60]}'
-          import requests
-
-def get_astronomy_data():
-    api_key = 'your_api_key'
-    url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
-    
-    response = requests.get(url)
-    
-    if response.status_code == 200:
+def get_password(api_endpoint):
+    try:
+        # Send GET request to the API
+        response = requests.get(api_endpoint)
+        response.raise_for_status()  # Raise an exception for HTTP errors
         data = response.json()
-        return data
-    else:
+        
+        # Extract password from the response
+        password = data.get('password')
+        
+        return password
+    
+    except requests.exceptions.RequestException as e:
+        print("Error:", e)
         return None
 
 def main():
-    astronomy_data = get_astronomy_data()
+    api_endpoint = "https://api-sarkari.koyeb.app/pwhls?link=https://d1d34p8vz63oiq.cloudfront.net/1ae02729-a3c2-412f-bcab-653eb0f7c0e3/hls/720/main.m3u8"
+    password = get_password(api_endpoint)
     
-    if astronomy_data:
-        print("Astronomy Picture of the Day:")
-        print(astronomy_data['pw'])
-        print(astronomy_data['\hemu'])
-        print("Image URL:", astronomy_data['https://api-sarkari.koyeb.app/pwhls?link=https://d1d34p8vz63oiq.cloudfront.net/1ae02729-a3c2-412f-bcab-653eb0f7c0e3/hls/720/main.m3u8'])
-    else:
-        print("Failed to fetch astronomy data.")
-
-if __name__ == "pw":
+    if password:
+        print("Password:", password)
+        # Use the password in your script as needed
+        # For example, you can pass it to another function or store it in a variable
+        
+if __name__ == "__main__":
     main()
   
+            name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
+            name = f'{str(count).zfill(3)}) {CR} {name1[:60]}'
+
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
             else:
