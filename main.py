@@ -23,25 +23,25 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "7109707094:AAGwjPkyO78A-7gX3vcQnA5T6zRTXUc1-Ik",
+             bot_token= "7139260466:AAEHwNQrZnGb8fzuQhNxEvlAl6Ud5_T_ddU",
              api_id= 24478182,
              api_hash= "a98b5be0127986be1cc2553dbd99765e"
 )
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hi 👋 Sir ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** 𝗛𝗘𝗠𝗨\n")
+    editable = await m.reply_text(f"Hi 👋 Sir ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** 𝙏𝙖𝙥𝙤𝙧𝙞 2.0")
   
 
-@bot.on_message(filters.command("stop"))
+@bot.on_message(filters.command("rukja"))
 async def restart_handler(_, m):
-    await m.reply_text("**Process Has Been Stopped Successfully !**", True)
+    await m.reply_text("**Ruk gya 😜😜**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["hemu"]))
+@bot.on_message(filters.command(["baby"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Now Send Me Your **txt** File & Follow Bot Instructions**")
+    editable = await m.reply_text(f"**𝕋𝕆 ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ᴛxᴛ ғɪʟᴇ 𝕤ᴇɴᴅ ʜᴇʀᴇ ⚡️\n & Follow Bot Instructions**")
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
@@ -72,12 +72,12 @@ async def account_login(bot: Client, m: Message):
         for i in content:
             links.append(i.split("://", 1))
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend Number From Where You want to Download initial is **1**")
+    await editable.edit(f"Total links found are **🔗{len(links)}**\n\nSend Number From Where You want to Download initial is **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Enter Batch Name or Send `d` To Grab Batch Name From Txt File**")
+    await editable.edit("**𝔼ɴᴛᴇʀ Batch Name From Txt File ✏️**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
@@ -86,7 +86,7 @@ async def account_login(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**Enter Resolution Ex :** 480 or 720")
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n\n144p,240p,360p,480p,720p,1080p please choose quality")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -108,7 +108,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name**\n**Ex : ** 𝗛𝗘𝗠𝗨")
+    await editable.edit("**𝔼ɴᴛᴇʀ Your Name📝** or send**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -117,7 +117,7 @@ async def account_login(bot: Client, m: Message):
     else:
         CR = raw_text3
 
-    await editable.edit("Now Send Your **Thumb url**\nEg : `https://telegra.ph/file/7b060bedc493fa9be744f.jpg`\n\nOr Send **no**")
+    await editable.edit("Now Send Your **Thumb url**\nEg : `````\n\nOr Send **no**")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -180,13 +180,12 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}({res}) 『 𝗛𝗘𝗠𝗨 』.mp4\n**Batch Name :** {b_name}\n\n**Extracted By ➤** {CR}'
-                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1} 『 𝗛𝗘𝗠𝗨 』.pdf\n**Batch Name :**{b_name}\n\n**Extracted By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID :**{str(count).zfill(3)}\n**Title  » ** {name1}({res}) 『 𝙏𝙖𝙥𝙤𝙧𝙞 2.0 』.mp4\n**Batch Name  » ** {b_name}\n\n**Extracted By ➤** {CR}\n@taporibot_bot'
+                cc1 = f'[ 📕 ] **Pdf ID :**{str(count).zfill(3)}\n**Title  » ** {name1} 『 𝙏𝙖𝙥𝙤𝙧𝙞 2.0 』.pdf\n**Batch Name  » **{b_name}\n\n**Extracted By ➤** {CR}\n@taporibot_bot'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002095173433)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -200,7 +199,6 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002095173433)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
@@ -208,7 +206,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **𝗛𝗘𝗠𝗨")
+                    prog = await m.reply_text(f"**⏬️ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶 ⏬️... :-**\n\n**🧾Title ➤** `{name}`\n**♻️Quality ➤** `{raw_text2}`\n\n**🚩Bot By ➤ **𝙏𝙖𝙥𝙤𝙧𝙞 2.0")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -225,7 +223,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done ✅")
 @bot.on_message(filters.command(["vpdf"]))
 async def vision_pdf(bot: Client, m: Message):
-    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 : 𝗛𝗘𝗠𝗨\n")
+    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 ➤ 𝙏𝙖𝙥𝙤𝙧𝙞 2.0")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -246,16 +244,16 @@ async def vision_pdf(bot: Client, m: Message):
             os.remove(x)
             return
             
-    editable = await m.reply_text(f"Total links found are {len(links)}\n\nSend From Where You Want to Download,\n\nInitial is 1")
+    editable = await m.reply_text(f"Total links found are 🔗{len(links)}\n\nSend From Where You Want to Download,\n\nInitial is 1")
     input1: Message = await bot.listen(editable.chat.id)
     count = input1.text
     count = int(count)      	
     	            
-    await m.reply_text("**Enter Your Batch Name**")
+    await m.reply_text("**𝔼ɴᴛᴇʀ your Batch Name **")
     inputy: Message = await bot.listen(editable.chat.id)
     raw_texty = inputy.text
 
-    await m.reply_text("**Enter Cookie**")
+    await m.reply_text("**𝔼ɴᴛᴇʀ Cookie**")
     input2: Message = await bot.listen(editable.chat.id)
     cookie = input2.text
     cookies = cookies = {'PHPSESSID': f'{cookie}'}
@@ -266,7 +264,7 @@ async def vision_pdf(bot: Client, m: Message):
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/","").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").strip()[:57]
             name = f'{str(count).zfill(3)}) {name1}'
-            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 𝗛𝗘𝗠𝗨 '
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 𝙏𝙖𝙥𝙤𝙧𝙞 2.0 '
             ka = await helper.vision(url, name, cookies)
             await m.reply_document(ka, caption=cc)
             count += 1
